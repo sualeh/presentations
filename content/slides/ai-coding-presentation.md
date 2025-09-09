@@ -55,7 +55,7 @@ _class:
 
 ## 📈 Productivity Gains
 
-- 20–40% faster coding  
+- 10–20% faster coding  
 - Fewer bugs in early stages  
 - Faster onboarding for new developers
 
@@ -70,7 +70,7 @@ _class:
 
 ## 💼 Business Impact
 
-- Faster releases  
+- Improved time to market 
 - Higher quality software  
 - More time for innovation
 
