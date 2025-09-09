@@ -1,0 +1,9 @@
+.vscode/*.dict
+
+# Hugo build artifacts
+public/
+resources/
+.hugo_build.lock
+
+# Generated slides
+static/slides/
