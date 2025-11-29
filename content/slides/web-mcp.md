@@ -27,7 +27,7 @@ AI-Powered Web Tools in the Browser
 
 - W3C standard exposing JavaScript tools to AI
 - Supported by Google and Microsoft
-- Runs fully in user’s browser
+- Tools run fully in user’s browser
 - Designed for human-in-the-loop
 
 
@@ -63,40 +63,32 @@ AI-Powered Web Tools in the Browser
 - Supports safe, collaborative workflows
 
 
-## Add to Cart Example
+## Example
 
 ```js
-const { McpServer, TabServerTransport} = window.MCP;
+import '@mcp-b/global';
 
-const server = new McpServer({name: "shopping-site", version: "1.0"});
-
-server.tool(
-  "addToCart", 
-  "Add an item to the shopping cart", 
-  {
-    productId: z.string().describe("Product ID"),
-    quantity: z.number().min(1).describe("Quantity to add"),
-  },
-  async ({ productId, quantity }) => { /* Call add to cart logic */ }
-);
+// Register tools
+const registration = navigator.modelContext.registerTool({
+  name: "get_page_title",
+  description: "Get current page title",
+  inputSchema: { type: "object", properties: {} },
+  async execute() {
+    return {
+      content: [{ type: "text", text: document.title }]
+    };
+  }
+});
 ```
 
 
 ## How This Example Works
 
-- MCP server runs in browser, exposes `addToCart` tool
-- AI calls `addToCart` with specified inputs
+- MCP server runs in browser, exposes `get_page_title` tool
+- AI calls `get_page_title` with specified inputs
 - Tool runs your application logic
 - Executes under existing user session and authentication
-- Enables AI agents to reliably help with cart actions
-
-
-## What is `TabServerTransport`?
-
-- In-browser transport connecting MCP server to AI agents in the same tab
-- Uses `window.postMessage` for secure messaging in tab context
-- Allows fast, permissioned communication (no backend or network hops)
-- Restricts by allowed origins for security
+- Enables AI agents to reliably execute actions
 
 
 ## WebMCP vs. Alternatives
