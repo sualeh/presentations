@@ -28,8 +28,15 @@ AI-Powered Web Tools in the Browser
 - W3C standard exposing JavaScript tools to AI
 - Supported by Google and Microsoft
 - Runs fully in user’s browser
-- Respects user session and authentication
 - Designed for human-in-the-loop
+
+
+## Human-in-the-Loop
+- WebMCP doesn’t replace website UI
+- Tools assist users
+- Users maintain control
+- Collaborative workflows between humans and AI
+- Respects user session and authentication
 
 
 ## What WebMCP is NOT
