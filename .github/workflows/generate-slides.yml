@@ -36,7 +36,7 @@ jobs:
 
     - id: upload-slides
       name: Upload PDF Slides
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       with:
         name: presentation-slides
         path: ./static/slides/*.pdf
